@@ -5,9 +5,11 @@ using UnityEngine.UI;
 public class interactionUI : MonoBehaviour {
 
     public float fillSpeed = 0.1f;
-    float alter = 1.2f;
+    float unfillAlter = 2;
+    float triggerEffectStartDeltaAlter = 10;
     Image thisImage ;
     bool unfill = false;
+    bool triggerEffectStart = false;
     
     // Use this for initialization
     void Start () {
@@ -17,10 +19,18 @@ public class interactionUI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (unfill) {
-            thisImage.fillAmount -= 1 / fillSpeed * Time.deltaTime * alter;
+            thisImage.fillAmount -= 1 / fillSpeed * Time.deltaTime * unfillAlter;
             if (thisImage.fillAmount < 0.01f) {
                 thisImage.fillAmount = 0;
                 unfill = false;
+            }
+        }
+        if (triggerEffectStart) {
+            thisImage.transform.localScale = Vector3.Lerp(thisImage.transform.localScale,Vector3.zero,Time.deltaTime*triggerEffectStartDeltaAlter);
+            if (thisImage.transform.localScale.x < 0.01f) {
+                thisImage.fillAmount = 0;
+                thisImage.transform.localScale = Vector3.one;
+                triggerEffectStart = false;
             }
         }
 	}
@@ -38,6 +48,10 @@ public class interactionUI : MonoBehaviour {
             }
         }
         
+    }
+
+    public void TriggerEffect() {
+        triggerEffectStart = true;
     }
 
     public void UnFillImage() {
