@@ -6,6 +6,7 @@ public class activative : MonoBehaviour {
     public class MyEventType : UnityEvent { }
     public MyEventType stay;
     public MyEventType exit;
+    public MyEventType trigger;
     // Use this for initialization
     void Start () {
 	
@@ -19,6 +20,10 @@ public class activative : MonoBehaviour {
     public void OnClick() {
         // print("gg");
         stay.Invoke();
+    }
+
+    public void OnTrigger() {
+        trigger.Invoke();
     }
 
     public void OnLeave() {

@@ -8,9 +8,9 @@ public class interactionUI : MonoBehaviour {
     float alter = 1.2f;
     Image thisImage ;
     bool unfill = false;
-
-	// Use this for initialization
-	void Start () {
+    
+    // Use this for initialization
+    void Start () {
         thisImage = GetComponent<Image>();
 	}
 	
