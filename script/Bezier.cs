@@ -5,6 +5,7 @@ public class Bezier : MonoBehaviour
 {
     public Transform[] controlPoints;
     public LineRenderer lineRenderer;
+    bool finished = false;
 
     private int curveCount = 0;
     private int layerOrder = 0;
@@ -24,7 +25,7 @@ public class Bezier : MonoBehaviour
     void Update()
     {
 
-        DrawCurve();
+       if(!finished) DrawCurve();
 
     }
 
@@ -39,9 +40,12 @@ public class Bezier : MonoBehaviour
                 Vector3 pixel = CalculateCubicBezierPoint(t, controlPoints[nodeIndex].position, controlPoints[nodeIndex + 1].position, controlPoints[nodeIndex + 2].position, controlPoints[nodeIndex + 3].position);
                 lineRenderer.SetVertexCount(((j * SEGMENT_COUNT) + i));
                 lineRenderer.SetPosition((j * SEGMENT_COUNT) + (i - 1), pixel);
+                //correspond with followLineMovind.cs
+                followLineMoving.waypoints.Add(pixel);
             }
 
         }
+        //finished = true;
     }
 
     Vector3 CalculateCubicBezierPoint(float t, Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3)

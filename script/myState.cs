@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class myState : MonoBehaviour {
 
-    public Text myScoreTxt;
+    public TextMesh myScoreTxt;
     public Image myLoadingUI;
     public int nowMovingTo = 0;
     public static int myScore = 0;
