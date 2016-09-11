@@ -45,7 +45,7 @@ public class Bezier : MonoBehaviour
             }
 
         }
-        //finished = true;
+        finished = true;
     }
 
     Vector3 CalculateCubicBezierPoint(float t, Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3)

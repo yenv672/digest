@@ -29,4 +29,14 @@ public class activative : MonoBehaviour {
     public void OnLeave() {
         exit.Invoke();
     }
+
+    void OnTriggerEnter(Collider who)
+    {
+        if (who.gameObject.tag == "Player") {
+            //print("here");
+            OnTrigger();
+        }
+
+
+    }
 }

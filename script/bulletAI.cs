@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class bulletAI : MonoBehaviour {
 
-    public float powerAlter = 5;
+    public float powerAlter = 8;
     public int targetLayer;
     public GameObject booooombEf;
     public static List<GameObject> bombs = new List<GameObject>();
@@ -23,8 +23,9 @@ public class bulletAI : MonoBehaviour {
 	}
 
     void OnTriggerEnter(Collider who) {
-        if (who.gameObject.tag == "food") {
-            myState.myScore += 1;
+        if (who.gameObject.GetComponent<foodAI>()) {
+            int myScore = who.gameObject.GetComponent<foodAI>().myScore;
+            myState.myScore += myScore;
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             this.gameObject.SetActive(false);
 
@@ -57,7 +58,7 @@ public class bulletAI : MonoBehaviour {
                 reactiveThis.transform.position = transform.position;
                 reactiveThis.SetActive(true);
             }
-          
+            who.gameObject.SetActive(false);
         }
     }
 }

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class foodAI : MonoBehaviour {
 
+    public int myScore;
+
 	// Use this for initialization
 	void Start () {
 	

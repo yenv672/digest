@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class shooting : MonoBehaviour {
 
+    public Transform shootFromHere;
     public GameObject shootingPartical;
     public static List<GameObject> bullets = new List<GameObject>();
 
@@ -39,14 +40,14 @@ public class shooting : MonoBehaviour {
         if (createNew)
         {
             // create a new bullet which shoot from here and face to target
-            GameObject newBul = Instantiate(shootingPartical, transform.position, Quaternion.identity) as GameObject;
+            GameObject newBul = Instantiate(shootingPartical, shootFromHere.position, Quaternion.identity) as GameObject;
             newBul.transform.LookAt(look.nowLooking.transform.position);
             // add into list
             bullets.Add(newBul);
             newBul.SetActive(true);
         }else{
             // reactive the bullet
-            reactiveThis.transform.position = transform.position;
+            reactiveThis.transform.position = shootFromHere.position;
             reactiveThis.transform.LookAt(look.nowLooking.transform.position);
             reactiveThis.SetActive(true);
         }

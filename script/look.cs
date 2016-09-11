@@ -6,7 +6,7 @@ public class look : MonoBehaviour {
     public static GameObject nowLooking = null;
     public static bool interactable=false;
     public LayerMask myMask;
-
+    public float lookDistance = 200;
 	// Use this for initialization
 	void Start () {
 	
@@ -16,8 +16,8 @@ public class look : MonoBehaviour {
     void Update() {
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         RaycastHit rayHitInfo = new RaycastHit(); // setting up a blank var to know where we hit
-        Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.yellow); // visualize in Scene View
-        if (Physics.Raycast(ray, out rayHitInfo, 1000f, myMask))
+        Debug.DrawRay(ray.origin, ray.direction * lookDistance, Color.yellow); // visualize in Scene View
+        if (Physics.Raycast(ray, out rayHitInfo, lookDistance, myMask))
         {
             if ( !interactable ) interactable = true;
             if ( nowLooking == null || nowLooking != rayHitInfo.collider.gameObject) nowLooking = rayHitInfo.collider.gameObject;
