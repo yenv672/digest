@@ -14,6 +14,12 @@ public class gameobjectInteraction : MonoBehaviour {
 	void Update () {
 	
 	}
+    public void UpSideDown() {
+        for (int i = 0; i < theseObjects.Length; i++)
+        {
+            theseObjects[i].transform.Rotate(new Vector3(180, 0, 0));
+        }
+    }
 
     public void Enable() {
         for (int i=0;i<theseObjects.Length;i++) {

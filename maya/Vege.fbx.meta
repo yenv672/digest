@@ -1862,6 +1862,7 @@ ModelImporter:
     4300736: polySurface368
     4300738: polySurface369
     4300740: polySurface370
+    4300742: pCube1
     9500000: //RootNode
   materials:
     importMaterials: 1

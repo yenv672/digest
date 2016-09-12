@@ -7,40 +7,11 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Stomach1
     100002: //RootNode
-    100004: polySurface1
-    100006: polySurface3
-    100008: polySurface6
-    100010: Stomach2
-    100012: Stomach2 1
-    100014: Stomach3
-    100016: Stomach4
-    100018: Stomach_pivot
-    100020: transform1
-    100022: transform2
-    100024: transform3
-    100026: transform4
-    100028: transform5
     400000: Stomach1
     400002: //RootNode
-    400004: polySurface1
-    400006: polySurface3
-    400008: polySurface6
-    400010: Stomach2
-    400012: Stomach2 1
-    400014: Stomach3
-    400016: Stomach4
-    400018: Stomach_pivot
-    400020: transform1
-    400022: transform2
-    400024: transform3
-    400026: transform4
-    400028: transform5
     2300000: Stomach1
-    2300002: polySurface6
     3300000: Stomach1
-    3300002: polySurface6
     4300000: Stomach1
-    4300002: polySurface6
     9500000: //RootNode
   materials:
     importMaterials: 1
