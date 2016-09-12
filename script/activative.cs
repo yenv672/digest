@@ -18,7 +18,6 @@ public class activative : MonoBehaviour {
 	}
 
     public void OnClick() {
-        // print("gg");
         stay.Invoke();
     }
 

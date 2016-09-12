@@ -23,7 +23,7 @@ public class shooting : MonoBehaviour {
         bool createNew = true;
         GameObject reactiveThis = null;
 
-        print("bullet "+bullets.Count);
+        //print("bullet "+bullets.Count);
 
         if (bullets.Count > 0) {
             foreach (GameObject g in bullets)

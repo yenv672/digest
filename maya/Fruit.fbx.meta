@@ -2877,6 +2877,7 @@ ModelImporter:
     4301142: polySurface571
     4301144: polySurface572
     4301146: polySurface573
+    4301148: pSphere1
     9500000: //RootNode
   materials:
     importMaterials: 1

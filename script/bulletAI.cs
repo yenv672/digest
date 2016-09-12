@@ -29,7 +29,7 @@ public class bulletAI : MonoBehaviour {
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             this.gameObject.SetActive(false);
 
-            print("bombs "+bombs.Count);
+            //print("bombs "+bombs.Count);
             bool createNew = true;
             GameObject reactiveThis =null;
             if (bombs.Count > 0) {

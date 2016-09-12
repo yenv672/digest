@@ -4,10 +4,12 @@ using UnityEngine.UI;
 
 public class myState : MonoBehaviour {
 
-    public TextMesh myScoreTxt;
+    public Text myScoreTxt;
+    public Text subScoreTxt;
     public Image myLoadingUI;
     public int nowMovingTo = 0;
     public static int myScore = 0;
+    int myLastScore = 0;
     activative myAction;
 
 	// Use this for initialization
@@ -19,7 +21,7 @@ public class myState : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //update where is player flying
-        nowMovingTo = flyAI.currentWpt;
+        //nowMovingTo = flyAI.currentWpt;
         //update loading UI
         UIUpdate(look.interactable);
         //if loading UI finished trigger
@@ -28,8 +30,15 @@ public class myState : MonoBehaviour {
             look.nowLooking.gameObject.layer = 0;
             myAction.OnTrigger();
         }
-        //update score
-        if (myScoreTxt.text != myScore.ToString()) myScoreTxt.text = myScore.ToString();
+        //update score and show get How many point
+        int getPoint = myScore - myLastScore;
+        if (getPoint!=0) {
+            myLastScore = myScore;
+            subScore.disappearStart = true;
+            subScoreTxt.color = new Color(subScoreTxt.color.r, subScoreTxt.color.g, subScoreTxt.color.b,1); 
+            subScoreTxt.text = "+" + getPoint.ToString();
+            myScoreTxt.text = myScore.ToString();
+        } 
     }
 
     public void UIUpdate(bool state) {
