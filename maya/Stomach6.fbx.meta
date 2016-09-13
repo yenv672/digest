@@ -11,15 +11,28 @@ ModelImporter:
     100006: polySurface7
     100008: Stomach6
     100010: //RootNode
+    100012: polySurface1958
+    100014: polySurface1960
+    100016: polySurface1962
+    100018: polySurface1964
+    100020: polySurface1967
     400000: polySurface1
     400002: polySurface3
     400004: polySurface5
     400006: polySurface7
     400008: Stomach6
     400010: //RootNode
+    400012: polySurface1958
+    400014: polySurface1960
+    400016: polySurface1962
+    400018: polySurface1964
+    400020: polySurface1967
     2300000: Stomach6
+    2300002: polySurface1967
     3300000: Stomach6
+    3300002: polySurface1967
     4300000: Stomach6
+    4300002: polySurface1967
     9500000: //RootNode
   materials:
     importMaterials: 1

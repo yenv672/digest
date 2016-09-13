@@ -7,9 +7,9 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Stomach_1_dif
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 901cffd0750f16944a58424a7cc98cb7, type: 3}
   m_ShaderKeywords: _NORMALMAP
-  m_LightmapFlags: 0
+  m_LightmapFlags: 6
   m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
@@ -18,8 +18,8 @@ Material:
     - first:
         name: _BumpMap
       second:
-        m_Texture: {fileID: 2800000, guid: 114adc245a4a57e4a934d1724f9819d3, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 371efd7bede11ed4ea72b9f22042eedf, type: 3}
+        m_Scale: {x: 15, y: 15}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _DetailAlbedoMap
@@ -42,14 +42,14 @@ Material:
     - first:
         name: _EmissionMap
       second:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 2ea60b71c76c0234cbf7285106d3cd16, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: b7043d5df6afd014ea7ce1dfeab40785, type: 3}
+        m_Scale: {x: 15, y: 15}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MetallicGlossMap
@@ -87,13 +87,13 @@ Material:
       second: 1
     - first:
         name: _Glossiness
-      second: 0
+      second: 0.124
     - first:
         name: _GlossyReflections
       second: 1
     - first:
         name: _Metallic
-      second: 0
+      second: 0.12
     - first:
         name: _Mode
       second: 0
@@ -103,6 +103,15 @@ Material:
     - first:
         name: _Parallax
       second: 0.02
+    - first:
+        name: _PulseIntensity
+      second: 3
+    - first:
+        name: _PulseRate
+      second: 0.4
+    - first:
+        name: _RimPower
+      second: 0.54
     - first:
         name: _SmoothnessTextureChannel
       second: 0
@@ -121,7 +130,13 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.66176474, g: 0.27735728, b: 0.27735728, a: 1}
+      second: {r: 0.32352942, g: 0.1665225, b: 0.1665225, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _PulseColor
+      second: {r: 0.86764705, g: 0.26794982, b: 0.26794982, a: 1}
+    - first:
+        name: _RimColor
+      second: {r: 0.30882353, g: 0, b: 0, a: 1}
