@@ -9,6 +9,7 @@ public class Bezier : MonoBehaviour
     public int[] speedOfNextLine;
     public Transform[] controlPoints;
     public LineRenderer lineRenderer;
+    public bool drawLineImm = false;
     bool finished = false;
     int nowCurve = 0;
     private int curveCount = 0;
@@ -87,15 +88,21 @@ public class Bezier : MonoBehaviour
                 float t = i / (float)SEGMENT_COUNT;
                 int nodeIndex = j * 3;
                 Vector3 pixel = CalculateCubicBezierPoint(t, controlPoints[nodeIndex].position, controlPoints[nodeIndex + 1].position, controlPoints[nodeIndex + 2].position, controlPoints[nodeIndex + 3].position);
-                /*lineRenderer.SetVertexCount(((j * SEGMENT_COUNT) + i));
-                lineRenderer.SetPosition((j * SEGMENT_COUNT) + (i - 1), pixel);*/
+                if (drawLineImm)
+                {
+                    lineRenderer.SetVertexCount(((j * SEGMENT_COUNT) + i));
+                    lineRenderer.SetPosition((j * SEGMENT_COUNT) + (i - 1), pixel);
+                }
                 //correspond with followLineMovind.cs
                 followLineMoving.waypoints.Add(pixel);
             }
 
         }
-        finished = true;
-        StartCoroutine(DrawCall());
+        
+        if (!drawLineImm) {
+            finished = true;
+            StartCoroutine(DrawCall());
+        } 
     }
 
     /*void leantweenfunction() {

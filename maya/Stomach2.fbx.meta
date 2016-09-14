@@ -11,21 +11,26 @@ ModelImporter:
     100006: polySurface1958
     100008: polySurface1961
     100010: polySurface1969
+    100012: polySurface1970
     400000: polySurface1
     400002: Stomach2
     400004: //RootNode
     400006: polySurface1958
     400008: polySurface1961
     400010: polySurface1969
+    400012: polySurface1970
     2300000: Stomach2
     2300002: polySurface1961
     2300004: polySurface1969
+    2300006: polySurface1970
     3300000: Stomach2
     3300002: polySurface1961
     3300004: polySurface1969
+    3300006: polySurface1970
     4300000: Stomach2
     4300002: polySurface1961
     4300004: polySurface1969
+    4300006: polySurface1970
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -67,8 +72,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 100
+    normalImportMode: 1
     tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0
