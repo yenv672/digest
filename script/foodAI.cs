@@ -7,26 +7,32 @@ public class foodAI : MonoBehaviour {
     bool startDissolve = false;
     public int myScore;
     float waitSec = 2;
-    bool move = false;
+    bool rotate = false;
+    bool floating = false;
     float adj = 0.1f;
-    float DissolveAdj = 5;
+    float DissolveAdj = 2;
+    Vector3 originalPosition;
+    float range = 0.1f;
+    float frq = 1f;
 
 	// Use this for initialization
 	void Start () {
-        StartCoroutine(rotateSlowly());
+        originalPosition = transform.position;
+        StartCoroutine(floatingSlowly());
         dissolveThis = GetComponentsInChildren<Renderer>()[1].material;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (move) moving();
+        if (rotate) rotatingFun();
+        if (floating) floatingFun();
         if (startDissolve) {
             dissolveThis.SetFloat("_clipDistance", Mathf.Lerp(dissolveThis.GetFloat("_clipDistance"),1,Time.deltaTime*DissolveAdj));
             if (dissolveThis.GetFloat("_clipDistance") > 0.99f) this.gameObject.SetActive(false);
         }
 	}
 
-    void moving() {
+    void rotatingFun() {
         int coin = Random.Range(0,3);
         switch (coin) {
             case 0:
@@ -44,16 +50,30 @@ public class foodAI : MonoBehaviour {
         }
     }
 
+    void floatingFun() {
+        transform.position = originalPosition + Vector3.up * Mathf.Sin(Time.time*frq) * range;
+    }
+
     public void dissolved() {
         startDissolve = true;
+    }
+
+    IEnumerator floatingSlowly() {
+        while (true) {
+            waitSec = Random.Range(2,0);
+            floating = true;
+            yield return new WaitForSeconds(waitSec);
+            floating = false;
+            yield return new WaitForSeconds(waitSec*2);
+        }
     }
 
     IEnumerator rotateSlowly() {
         while (true) {
             waitSec = Random.Range(2,1);
-            move = true;
+            rotate = true;
             yield return new WaitForSeconds(waitSec);
-            move = false;
+            rotate = false;
             yield return new WaitForSeconds(waitSec*2);
         }
     }

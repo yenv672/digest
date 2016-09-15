@@ -71,4 +71,8 @@ public class followLineMoving : MonoBehaviour {
             landed = true;
         }
     }
+
+    public void stop() {
+        landed = true;
+    }
 }

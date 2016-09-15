@@ -23,7 +23,7 @@ public class bulletAI : MonoBehaviour {
 	}
 
     void OnTriggerEnter(Collider who) {
-        if (who.gameObject.GetComponent<foodAI>()) {
+        if (who.gameObject.GetComponent<foodAI>() && who.gameObject.layer != 14) {
             int myScore = who.gameObject.GetComponent<foodAI>().myScore;
             who.gameObject.GetComponent<foodAI>().dissolved();
             myState.myScore += myScore;

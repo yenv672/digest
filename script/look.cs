@@ -17,9 +17,10 @@ public class look : MonoBehaviour {
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         RaycastHit rayHitInfo = new RaycastHit(); // setting up a blank var to know where we hit
         //Debug.DrawRay(ray.origin, ray.direction * lookDistance, Color.yellow); // visualize in Scene View
+        //if (Physics.Raycast(ray, out rayHitInfo, lookDistance, myMask))print("here " + rayHitInfo.collider.name);
         if (Physics.Raycast(ray, out rayHitInfo, lookDistance, myMask) && (  rayHitInfo.collider!=null && rayHitInfo.collider.gameObject.layer == 14))
         {
-           // print("here");
+            //print("here "+ rayHitInfo.collider.name);
             if ( !interactable ) interactable = true;
             if ( nowLooking == null || nowLooking != rayHitInfo.collider.gameObject) nowLooking = rayHitInfo.collider.gameObject;
         }

@@ -120,7 +120,7 @@ Material:
       second: 1.27
     - first:
         name: _RimPower
-      second: 2.38
+      second: 1.34
     - first:
         name: _SmoothnessTextureChannel
       second: 0
@@ -138,7 +138,7 @@ Material:
       second: 1
     - first:
         name: _clipDistance
-      second: -1
+      second: 0
     - first:
         name: _clipEdgeDistance
       second: 0
@@ -157,10 +157,10 @@ Material:
       second: {r: 0.4328358, g: 0, b: 0, a: 1}
     - first:
         name: _RimColor
-      second: {r: 0.36764705, g: 1, b: 0.7121703, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _SpecularColor
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 0}
     - first:
         name: _clipEdgeColor
       second: {r: 1, g: 1, b: 1, a: 1}
